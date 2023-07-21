@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300&family=Tektur&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
+  <header id="header">
     
   </header>
   <main>
@@ -53,5 +53,31 @@
   <footer>
     <p>&copy; 2023 Karolis Ilčiukas. All rights reserved.</p>
   </footer>
+  <script>
+    // 1 JS uzduotis
+    function pasisveikinti() {
+      console.log("SVEIKI, SKAITOTE CONSOLE.LOG?");
+    }
+
+    pasisveikinti();
+
+    // 2 JS uzduotis
+    const header = document.getElementById('header'); 
+    const originalBackground = getComputedStyle(header).backgroundImage;
+
+    header.addEventListener('click', function () {
+      const currentBackground = getComputedStyle(header).backgroundImage;
+
+      if (currentBackground === 'none') {
+      
+        header.style.backgroundImage = originalBackground;
+      } else {
+    
+        header.style.backgroundImage = 'none';
+        header.style.backgroundColor = '#120465';
+      }
+    });
+
+  </script>
 </body>
 </html>
